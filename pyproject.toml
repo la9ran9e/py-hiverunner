@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "py-hiverunner"
+version = "0.1.0"
+description = ""
+authors = ["la9ran9e <tvauritimur@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+JPype1 = "^0.7.5"
+python-dotenv = "^0.13.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
