@@ -1,7 +1,7 @@
 # py-hiverunner
 Library provides python API for [klarna HiveRunner](https://github.com/klarna/HiveRunner).
 
-##Usage
+## Usage
 Before using you should set `HIVERUNNER` environment variable to classpath of original HiveRunner jar.
 ```python
 from py_hiverunner import create_hivrunner
