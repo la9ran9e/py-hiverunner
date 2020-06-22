@@ -7,7 +7,7 @@ from py_hiverunner.hiverunner import HiveRunner
 from py_hiverunner.settings import HIVERUNNER_CLASS_PATH, BASEDIR, DEFAULT_SEP, DEFAULT_NULL
 
 
-def create_hivrunner() -> HiveRunner:
+def create_hiverunner() -> HiveRunner:
     """
     Creates hiverunner instance.
 

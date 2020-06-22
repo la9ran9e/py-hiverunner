@@ -25,6 +25,7 @@ class HiveRunnerApi:
 
     def stop(self):
         self._instance.stop()
+        self._jvm.stop()
 
     def __enter__(self):
         self.start()

@@ -7,7 +7,10 @@ class JVM:
 
     def start(self):
         jpype.addClassPath(self._classpath)
-        jpype.startJVM(convertStrings=False)
+        jpype.startJVM("-Dlog4j.rootLogger=OFF", convertStrings=False)
+
+    def stop(self):
+        jpype.shutdownJVM()
 
     def get_class(self, import_path: str):  # real signature unknown
         return jpype.JClass(import_path)
