@@ -7,7 +7,7 @@ class JVM:
 
     def start(self):
         jpype.addClassPath(self._classpath)
-        jpype.startJVM("-Dlog4j.rootLogger=OFF", convertStrings=False)
+        jpype.startJVM(convertStrings=False)
 
     def stop(self):
         jpype.shutdownJVM()
