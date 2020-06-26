@@ -2,7 +2,7 @@ language: python
 addons:
   apt:
     packages:
-      - openjdk8
+      - openjdk-8-jdk
 matrix:
   include:
     - python: "3.8"
