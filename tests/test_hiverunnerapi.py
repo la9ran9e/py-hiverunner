@@ -32,5 +32,4 @@ def table_with_array(hiverunnerapi):
 def test_return_type(hiverunnerapi):
     ret = hiverunnerapi.execute_query("SELECT a, b, c from test.table_with_array")
     assert isinstance(ret, list)
-    print(ret[0])
     assert isinstance(ret[0], str)

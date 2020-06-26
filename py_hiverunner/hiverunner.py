@@ -1,8 +1,8 @@
-from typing import Any, List, Optional, Tuple
+from typing import List, Optional, Tuple
 
 from py_hiverunner.hiverunner_api import HiveRunnerApi
 from py_hiverunner.core.parser import Parser
-from py_hiverunner.core.type import HQL
+from py_hiverunner.core.type import HQL, Deserialized
 
 
 class HiveRunner:
@@ -10,7 +10,7 @@ class HiveRunner:
         self._api = api
         self._parser = parser
 
-    def execute_query(self, query: HQL) -> List[Tuple[Optional[Any]]]:
+    def execute_query(self, query: HQL) -> List[Tuple[Optional[Deserialized]]]:
         raw_result = self._api.execute_query(query)
         result = []
         for string_row in raw_result:

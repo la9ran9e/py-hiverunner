@@ -1,0 +1,15 @@
+language: python
+addons:
+  apt:
+    packages:
+      - oracle-java8-set-default
+matrix:
+  include:
+    - python: "3.8"
+install:
+  - pip install poetry
+  - poetry install
+script:
+  - py.test --cov=py_hiverunner tests
+after_success:
+  - codecov

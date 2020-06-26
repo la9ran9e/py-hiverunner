@@ -5,15 +5,11 @@ from py_hiverunner.core.type import HQL, array_cast
 
 
 class HiveRunnerApi:
-    def __init__(
-            self,
-            jvm: JVM,
-            basedir: str = "py-hiverunner-",
-            class_path: str = "com.la9ran9e.hiverunner.HiveRunner"
-    ):
+    _class_path = "com.la9ran9e.hiverunner.HiveRunner"
+
+    def __init__(self, jvm: JVM, basedir: str = "py-hiverunner-"):
         self._jvm = jvm
         self._basedir = basedir
-        self._class_path = class_path
         self._class = None
         self._instance = None
 
