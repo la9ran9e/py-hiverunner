@@ -1,4 +1,7 @@
 # py-hiverunner
+[![Build Status](https://travis-ci.com/la9ran9e/py-hiverunner.svg?branch=master)](https://travis-ci.com/la9ran9e/py-hiverunner)
+[![Code Coverage Status](https://codecov.io/gh/la9ran9e/py-hiverunner/branch/master/graph/badge.svg)](https://codecov.io/gh/la9ran9e/py-hiverunner)
+
 Library provides python API for [Klarna's HiveRunner](https://github.com/klarna/HiveRunner).
 
 ## Usage
