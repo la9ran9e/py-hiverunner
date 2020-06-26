@@ -14,6 +14,7 @@ def create_hiverunner() -> HiveRunner:
     :return: hiverunner
     :rtype: HiveRunner
     """
+    print(HIVERUNNER_CLASS_PATH)
     _jvm = JVM(HIVERUNNER_CLASS_PATH)
     _api = HiveRunnerApi(jvm=_jvm, basedir=BASEDIR)
     _parser = RegexParser(sep=DEFAULT_SEP, null_presentation=DEFAULT_NULL)
