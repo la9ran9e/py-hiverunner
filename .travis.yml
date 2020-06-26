@@ -2,7 +2,7 @@ language: python
 addons:
   apt:
     packages:
-      - oracle-java8-set-default
+      - openjdk8
 matrix:
   include:
     - python: "3.8"
