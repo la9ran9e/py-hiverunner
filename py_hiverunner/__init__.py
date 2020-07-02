@@ -1,6 +1,6 @@
 __version__ = '0.1.0'
 
-from py_hiverunner.core.jvm import JVM
+from py_hiverunner.jvm import Py4JEntryPoint
 from py_hiverunner.parser import RegexParser
 from py_hiverunner.hiverunner_api import HiveRunnerApi
 from py_hiverunner.hiverunner import HiveRunner
@@ -14,8 +14,7 @@ def create_hiverunner() -> HiveRunner:
     :return: hiverunner
     :rtype: HiveRunner
     """
-    print(HIVERUNNER_CLASS_PATH)
-    _jvm = JVM(HIVERUNNER_CLASS_PATH)
+    _jvm = Py4JEntryPoint()
     _api = HiveRunnerApi(jvm=_jvm, basedir=BASEDIR)
     _parser = RegexParser(sep=DEFAULT_SEP, null_presentation=DEFAULT_NULL)
     return HiveRunner(_api, _parser)

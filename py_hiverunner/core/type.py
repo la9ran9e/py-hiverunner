@@ -1,6 +1,8 @@
 from typing import Callable, List, TypeVar, Iterable, Union
 
 
+JClass = TypeVar("JClass")
+JHiveRunner = TypeVar("JHiveRunner")
 HQL = str
 JString = TypeVar("JString")
 SourceArray = Iterable[int]

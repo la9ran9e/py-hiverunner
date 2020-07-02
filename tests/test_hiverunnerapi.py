@@ -1,13 +1,13 @@
 import pytest
 
-from py_hiverunner.core.jvm import JVM
+from py_hiverunner.jvm import JPypeEntryPoint
 from py_hiverunner.hiverunner_api import HiveRunnerApi
 from py_hiverunner.settings import HIVERUNNER_CLASS_PATH
 
 
 @pytest.fixture
 def jvm():
-    yield JVM(HIVERUNNER_CLASS_PATH)
+    yield JPypeEntryPoint(HIVERUNNER_CLASS_PATH)
 
 
 @pytest.fixture

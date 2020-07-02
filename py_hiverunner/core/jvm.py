@@ -1,16 +1,17 @@
-import jpype
+from abc import ABC, abstractmethod
+
+from py_hiverunner.core.type import JHiveRunner
 
 
-class JVM:
-    def __init__(self, classpath: str):
-        self._classpath = classpath
-
+class JVMEntryPoint(ABC):
+    @abstractmethod
     def start(self):
-        jpype.addClassPath(self._classpath)
-        jpype.startJVM(convertStrings=False)
+        ...
 
+    @abstractmethod
     def stop(self):
-        jpype.shutdownJVM()
+        ...
 
-    def get_class(self, import_path: str):  # real signature unknown
-        return jpype.JClass(import_path)
+    @abstractmethod
+    def get_hiverunner(self, *args, **kwargs) -> JHiveRunner:
+        ...
