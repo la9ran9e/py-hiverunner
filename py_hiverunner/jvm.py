@@ -30,12 +30,18 @@ class Py4JEntryPoint(JVMEntryPoint):
     def __init__(self, **kwargs):
         self._kwargs = kwargs
         self._gateway: Optional[JavaGateway] = None
+        self._instance = None
 
     def start(self):
         self._gateway = JavaGateway(gateway_parameters=GatewayParameters(**self._kwargs))
 
     def stop(self):
+        if self._instance:
+            self._instance.stop()
         self._gateway.close()
 
     def get_hiverunner(self, *args, **kwargs) -> JHiveRunner:
-        return self._gateway.entry_point.getHiveRunnerInstance(*args, **kwargs)
+        if self._instance:
+            self._instance.stop()
+        self._instance = self._gateway.entry_point.getHiveRunnerInstance(*args, **kwargs)
+        return self._instance

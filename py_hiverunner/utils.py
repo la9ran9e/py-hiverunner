@@ -1,6 +1,15 @@
 import pkg_resources
 
-from typing import Any, List
+from typing import Any, Callable, List, Iterable
+
+from py_hiverunner.core.type import JString, Deserialized
+
+
+def array_cast(array: Iterable[JString], cast: Callable[[JString], Deserialized]) -> List[Deserialized]:
+    _list = []
+    for item in array:
+        _list.append(cast(item))
+    return _list
 
 
 def list_string(string_array: str) -> List[Any]:

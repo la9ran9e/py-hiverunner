@@ -10,7 +10,7 @@ class HiveRunner:
         self._api = api
         self._parser = parser
 
-    def execute_query(self, query: HQL) -> List[Tuple[Optional[Deserialized]]]:
+    def execute_query(self, query: HQL) -> List[Tuple[Optional[Deserialized], ...]]:
         raw_result = self._api.execute_query(query)
         result = []
         for string_row in raw_result:
