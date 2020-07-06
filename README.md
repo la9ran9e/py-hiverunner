@@ -7,15 +7,15 @@ Library provides python API for [Klarna's HiveRunner](https://github.com/klarna/
 ## Usage
 Before using `py-hiverunner` you need start JVM with facade service based on original Klarna's `HiveRunner` - 
 [java-hiverunner](./java-hiverunner).
-This repo provides [Dockerfile](./Dockerfile) to build docker image with Java HiveRunner server.
+This repo provides [docker container for Py4J Java Gateway for HiveRunner](https://hub.docker.com/r/la9ran9e/py-hiverunner).
 
-You can build this:
+You can pull this:
 ```bash
-docker build -t py-hiverunner .
+docker pull la9ran9e/py-hiverunner
 ```
 and then run the container:
 ```bash
-docker run -ti -p 25333:25333 -p 25334:25334 py-hiverunner
+docker run -ti -p 25333:25333 -p 25334:25334 la9ran9e/py-hiverunner
 ```
 After that you will have working server with Java HiveRunner.
 
