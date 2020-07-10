@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "py-hiverunner"
 version = "0.1.0"
-description = ""
+description = "Python API for unittest Hive applications"
 authors = ["la9ran9e <tvauritimur@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/la9ran9e/py-hiverunner"
+keywords = ["hive", "test"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
