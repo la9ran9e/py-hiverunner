@@ -1,4 +1,4 @@
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 from py_hiverunner.jvm import Py4JEntryPoint
 from py_hiverunner.parser import RegexParser
