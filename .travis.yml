@@ -9,7 +9,7 @@ env:
     - PY_HIVERUNNER_HOST_NAME="py-hiverunner"
 addons:
   hosts:
-    - py-hiverunner
+    - $PY_HIVERUNNER_HOST_NAME
   apt:
     packages:
       - openjdk-8-jdk
