@@ -43,6 +43,10 @@ with hiverunner() as hive:
     hive.execute_query("insert into meh.nonsub select 2, 'la9ran9e', array('1', 'b', 'b', '6')")
     hive.execute_query("insert into meh.nonsub select 3, 'la9ran9e', array('1', 'c', 'b', '6')")
     hive.execute_query("insert into meh.nonsub select 4, '', array('1', 'd', 'b', '6')")
+
+    hive.execute_query("create table meh.sub(a int, b string, c boolean)")
+    hive.execute_query("insert into meh.sub select 1, 'la9ran9e', true")
+
     print("RESULT:")
     pprint(hive.execute_query("""
         select
