@@ -1,18 +1,18 @@
 language: python
 services:
   - docker
+addons:
+  hosts:
+    - py-hiverunner
+  apt:
+    packages:
+      - openjdk-8-jdk
 env:
   global:
     - DOCKER_IMAGE_NAME="la9ran9e/py-hiverunner"
     - DOCKER_IMAGE_TAG="latest"
     - DOCKER_CONTAINER_NAME="py-hiverunner_test"
     - PY_HIVERUNNER_HOST_NAME="py-hiverunner"
-addons:
-  hosts:
-    - $PY_HIVERUNNER_HOST_NAME
-  apt:
-    packages:
-      - openjdk-8-jdk
 matrix:
   include:
     - python: "3.6"
