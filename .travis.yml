@@ -13,6 +13,8 @@ addons:
   apt:
     packages:
       - openjdk-8-jdk
+  hosts:
+    - $PY_HIVERUNNER_HOST_NAME
 matrix:
   include:
     - python: "3.6"
