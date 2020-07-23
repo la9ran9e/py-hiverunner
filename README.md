@@ -32,17 +32,30 @@ After that you will have working server with Java HiveRunner.
 Try this:
 
 ```python
-from py_hiverunner import create_hiverunner
+from py_hiverunner import hiverunner
 from pprint import pprint
 
 
-with create_hiverunner() as hive:
+with hiverunner() as hive:
     hive.execute_query("create schema meh")
     hive.execute_query("create table meh.nonsub(a int, b string, c array<string>)")
     hive.execute_query("insert into meh.nonsub select 1, 'la9ran9e', array('1', 'a', 'b', '6')")
     hive.execute_query("insert into meh.nonsub select 2, 'la9ran9e', array('1', 'b', 'b', '6')")
     hive.execute_query("insert into meh.nonsub select 3, 'la9ran9e', array('1', 'c', 'b', '6')")
     hive.execute_query("insert into meh.nonsub select 4, '', array('1', 'd', 'b', '6')")
+
+    hive.execute_query("create table meh.sub(a int, b string, c boolean)")
+    hive.execute_query("insert into meh.sub select 1, 'la9ran9e', true")
+
     print("RESULT:")
-    pprint(hive.execute_query("select * from meh.nonsub where b = 'la9ran9e'"))
+    pprint(hive.execute_query("""
+        select
+            *
+        from
+            meh.sub as sub
+        inner join
+            meh.nonsub as nonsub
+        on
+            sub.b = nonsub.b
+    """))
 ```

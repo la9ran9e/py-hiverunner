@@ -2,19 +2,22 @@ language: python
 services:
   - docker
 addons:
+  hosts:
+    - py-hiverunner
   apt:
     packages:
       - openjdk-8-jdk
-matrix:
-  include:
-    - python: "3.6"
-    - python: "3.7"
-    - python: "3.8"
 env:
   global:
     - DOCKER_IMAGE_NAME="la9ran9e/py-hiverunner"
     - DOCKER_IMAGE_TAG="latest"
     - DOCKER_CONTAINER_NAME="py-hiverunner_test"
+    - PY_HIVERUNNER_HOST_NAME="py-hiverunner"
+matrix:
+  include:
+    - python: "3.6"
+    - python: "3.7"
+    - python: "3.8"
 before_install:
   - docker pull $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
   - docker run -d -p 25333:25333 -p 25334:25334 --name $DOCKER_CONTAINER_NAME $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
