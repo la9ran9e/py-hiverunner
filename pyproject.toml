@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-hiverunner"
-version = "0.1.2"
+version = "0.1.3"
 description = "Python API for unittest Hive applications"
 authors = ["la9ran9e <tvauritimur@gmail.com>"]
 readme = "README.md"

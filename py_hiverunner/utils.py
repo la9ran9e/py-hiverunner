@@ -15,7 +15,7 @@ def array_cast(array: Iterable[JString], cast: Callable[[JString], Deserialized]
 def list_string(string_array: str) -> List[Any]:
     if string_array == "[]":
         return []
-    return [item[1:-1] for item in string_array.strip("][").split(",")]
+    return [item for item in string_array.strip("][")[1:-1].split("\",\"")]
 
 
 def boolean_string(string_bool: str) -> bool:
